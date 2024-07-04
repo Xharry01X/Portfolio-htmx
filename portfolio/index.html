@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Designer and Coder</title>
+    <script src="https://unpkg.com/htmx.org@2.0.0" integrity="sha384-wS5l5IKJBvK6sPTKa2WZ1js3d947pvWXbPJ1OmWfEuxLgeHcEbjUUA5i9V5ZkpCw" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-jIyvjq6I1rNok2q8JrYixLccAKM1OfLxVR9F3lB+hDFPSe5PEYxZBC6TFFx55KfuHjvC/h8NEgoErH+ogxr4vQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn ease-in 1;
+            animation-fill-mode: forwards;
+            animation-duration: 1s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .typewriter-text {
+            display: inline-block;
+            border-right: 2px solid black;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+        .logo {
+            transition: transform 0.3s ease-in-out;
+        }
+        .logo:hover {
+            transform: rotate(360deg) scale(1.1);
+        }
+        header {
+            transition: background-color 0.3s ease-in-out;
+        }
+        header:hover {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+    <header class="bg-black text-white py-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-2xl font-bold">
+                <img src="./assets/saitama2.png" alt="saitama" class="logo w-12 h-12">
+            </div>
+            <nav class="ml-auto">
+                <ul class="flex space-x-12">
+                    <li><a href="#" class="hover:underline">about</a></li>
+                    <li><a href="#" class="hover:underline">featured</a></li>
+                    <li><a href="#" class="hover:underline">portfolio</a></li>
+                    <li><a href="#" class="hover:underline">blog</a></li>
+                    <li><a href="#" class="hover:underline">contact</a></li>
+                </ul>
+            </nav>
+            <div class="flex space-x-4 ml-4">
+                <a href="#" class="hover:text-gray-400"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="hover:text-gray-400"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="hover:text-gray-400"><i class="fab fa-dribbble"></i></a>
+                <a href="#" class="hover:text-gray-400"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </header>
+    <main class="container mx-auto py-20 fade-in">
+        <div class="text-center mb-12">
+            <h1 class="text-5xl font-bold">
+                <span class="typewriter-text" id="typewriter"></span>
+            </h1>
+        </div>
+        <div class="flex justify-center items-center space-x-16">
+            <div class="text-center max-w-sm">
+                <div class="w-48 h-48 mx-auto mb-4">
+                    <img src="./assets/gojo1.png" alt="Designer" class="w-full h-full object-cover rounded-full shadow-lg">
+                </div>
+                <h2 class="text-2xl font-bold">Frontend Developer</h2>
+                <p class="mt-4 text-gray-600">UI/UX Designer with a passion for designing beautiful and functional user experiences.</p>
+            </div>
+            <div class="text-center max-w-sm">
+                <div class="w-48 h-48 mx-auto mb-4">
+                    <img src="./assets/sukuna.png" alt="Coder" class="w-full h-full object-cover rounded-full shadow-lg">
+                </div>
+                <h2 class="text-2xl font-bold">&lt;coder&gt;</h2>
+                <p class="mt-4 text-gray-600">Front End Developer who focuses on writing clean, elegant, and efficient code.</p>
+            </div>
+        </div>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const texts = ["Designer", "Coder", "Programmer", "Learner"];
+            let textIndex = 0;
+            let charIndex = 0;
+            const typewriterElement = document.getElementById('typewriter');
+
+            function typeWriter() {
+                if (charIndex < texts[textIndex].length) {
+                    typewriterElement.innerHTML += texts[textIndex].charAt(charIndex);
+                    charIndex++;
+                    setTimeout(typeWriter, 150);
+                } else {
+                    setTimeout(() => {
+                        typewriterElement.innerHTML = "";
+                        charIndex = 0;
+                        textIndex = (textIndex + 1) % texts.length;
+                        typeWriter();
+                    }, 2000); // Pause before starting the next word
+                }
+            }
+
+            typeWriter();
+        });
+    </script>
+</body>
+</html>
