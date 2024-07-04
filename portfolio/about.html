@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Harshit Singh</title>
+    <script src="https://unpkg.com/htmx.org@2.0.0" integrity="sha384-wS5l5IKJBvK6sPTKa2WZ1js3d947pvWXbPJ1OmWfEuxLgeHcEbjUUA5i9V5ZkpCw" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-jIyvjq6I1rNok2q8JrYixLccAKM1OfLxVR9F3lB+hDFPSe5PEYxZBC6TFFx55KfuHjvC/h8NEgoErH+ogxr4vQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn ease-in 1;
+            animation-fill-mode: forwards;
+            animation-duration: 1s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .typewriter-text {
+            display: inline-block;
+            border-right: 2px solid black;
+            white-space: nowrap;
+            overflow: hidden;
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+        }
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: black; }
+        }
+        .logo {
+            transition: transform 0.3s ease-in-out;
+        }
+        .logo:hover {
+            transform: rotate(360deg) scale(1.1);
+        }
+        header {
+            transition: background-color 0.3s ease-in-out;
+        }
+        header:hover {
+            background-color: #333;
+        }
+        .cursive-text {
+            font-family: 'Dancing Script', cursive;
+        }
+        .animate-bounce {
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-30px);
+            }
+            60% {
+                transform: translateY(-15px);
+            }
+        }
+        .transparent-background {
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 15px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-r from-blue-500 to-green-500 font-sans">
+    <header class="bg-black text-white py-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-2xl font-bold">
+                <img src="./assets/saitama2.png" alt="saitama" class="logo w-12 h-12">
+            </div>
+            <nav class="ml-auto">
+                <ul class="flex space-x-12">
+                    <li><a href="index.html" class="hover:underline">Home</a></li>
+                    <li><a href="about.html" class="hover:underline">About</a></li>
+                    <li><a href="#" class="hover:underline">Experience</a></li>
+                    <li><a href="#" class="hover:underline">Projects</a></li>
+                    <li><a href="#" class="hover:underline">Blog</a></li>
+                </ul>
+            </nav>
+            <div class="flex space-x-4 ml-4">
+                <a href="#" class="hover:text-gray-400"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="hover:text-gray-400"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="hover:text-gray-400"><i class="fab fa-dribbble"></i></a>
+                <a href="#" class="hover:text-gray-400"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </header>
+    <main class="container mx-auto py-20 fade-in">
+        <div class="text-center mb-12">
+            <h1 class="text-5xl font-bold cursive-text animate-bounce">
+                <span class="typewriter-text">Harshit Singh</span>
+            </h1>
+        </div>
+        <div class="max-w-2xl mx-auto text-center transparent-background">
+            <p class="text-gray-700 leading-loose cursive-text">
+                Hello! I'm <span class="cursive-text">Harshit</span>, a passionate designer and coder with a deep love for creating beautiful and functional user experiences. With a background in UI/UX design and front-end development, I strive to bridge the gap between design and technology, crafting seamless and engaging digital experiences.
+            </p>
+            <p class="mt-4 text-gray-700 leading-loose cursive-text">
+                Over the years, I have honed my skills in various design and development tools, continuously learning and adapting to new technologies and trends. My journey has been driven by a curiosity for innovation and a commitment to excellence, always aiming to deliver high-quality work that resonates with users.
+            </p>
+            <p class="mt-4 text-gray-700 leading-loose cursive-text">
+                My expertise spans across multiple domains:
+            </p>
+            <ul class="list-disc list-inside text-left text-gray-700 leading-loose cursive-text">
+                <li><span class="cursive-text">Frontend Development</span>: Not a UI/UX guy, well known for optimizing frontend components.</li>
+                <li><span class="cursive-text">Backend Development</span>: I love to write backend logic because this is where my core interest lies.</li>
+                <li><span class="cursive-text">Tech Stack</span>: React Native, MongoDB, Zustand, React Query, Joi, Express, TursoDB, Jotai, Golang.</li>
+            </ul>
+            <p class="mt-4 text-gray-700 leading-loose cursive-text">
+                When I'm not designing or coding, you can find me exploring the latest in tech, dabbling in photography, or enjoying a good book. I'm always excited to connect with like-minded individuals, so feel free to reach out!
+            </p>
+            <div class="flex justify-center mt-8 space-x-4">
+                <a href="mailto:harshitsingh50621@gmail.com" class="text-gray-600 hover:text-gray-900">
+                    <i class="fas fa-envelope fa-2x"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/harshit-singh-13810b186/" class="text-gray-600 hover:text-gray-900">
+                    <i class="fab fa-linkedin fa-2x"></i>
+                </a>
+                <a href="https://github.com/harshit-1245" class="text-gray-600 hover:text-gray-900">
+                    <i class="fab fa-github fa-2x"></i>
+                </a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
